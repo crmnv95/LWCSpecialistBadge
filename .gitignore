@@ -53,3 +53,6 @@ $RECYCLE.BIN/
 /LWCPackage/main/default/staticresources/Sailboats/*.jpg
 /LWCPackage/main/default/staticresources/Sailboats/*.png
 /LWCPackage/main/default/staticresources/fivestar/*.svg
+
+# VS Code Workspace
+LWC Specialist Badge.code-workspace
