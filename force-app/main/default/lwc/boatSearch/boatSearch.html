@@ -2,17 +2,17 @@
     <lightning-layout multiple-rows>
         <lightning-layout-item size="12">
             <lightning-card title="Find a Boat">
-                <slot name="actions">
-                    <lightning-button variant="base" label="New Boat" title="New Boat" onclick={handleClick} class="slds-var-m-left_x-small"></lightning-button>
+                <slot name="actions" class="slds-text-align_right">
+                    <lightning-button label="New Boat" title="New Boat" onclick={createNewBoat} class="slds-var-m-right_x-small"></lightning-button>
                 </slot>
                 <p class="slds-var-p-horizontal_small">
-                    <c-boat-search-form></c-boat-search-form>
+                    <c-boat-search-form onsearch={searchBoats}></c-boat-search-form>
                 </p>
             </lightning-card>
         </lightning-layout-item>
         <lightning-layout-item size="12" class="slds-var-m-top_small slds-is-relative">
-            <lightning-spinner onloading={handleLoading} ondoneloading={handleDoneLoading} alternative-text="Loading" size="xx-small"></lightning-spinner>
-            <!-- boatSearchResults goes here -->
+            <lightning-spinner alternative-text="Loading" size="xx-small"></lightning-spinner>
+            <c-boat-search-results onloading={handleLoading} ondoneloading={handleDoneLoading}></c-boat-search-results>
         </lightning-layout-item>
     </lightning-layout>
 </template>
