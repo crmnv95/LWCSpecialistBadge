@@ -56,3 +56,6 @@ $RECYCLE.BIN/
 
 # VS Code Workspace
 LWC Specialist Badge.code-workspace
+
+# LWC Jest
+**/__tests__/**
