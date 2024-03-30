@@ -1,5 +1,7 @@
 import { LightningElement, wire, api } from 'lwc';
 import getBoats from '@salesforce/apex/BoatDataService.getBoats';
+import { publish, MessageContext } from 'lightning/messageService';
+import BOATMC from '@salesforce/messageChannel/BoatMessageChannel__c';
 
 export default class BoatSearchResults extends LightningElement {
     selectedBoatId;
@@ -14,6 +16,9 @@ export default class BoatSearchResults extends LightningElement {
             this.boats = result.data;
         }
     }
+
+    @wire(MessageContext)
+    messageContext;
 
     // public function that updates the existing boatTypeId property
     // uses notifyLoading
