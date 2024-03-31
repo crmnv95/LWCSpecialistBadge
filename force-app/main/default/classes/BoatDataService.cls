@@ -99,12 +99,13 @@ public with sharing class BoatDataService {
         return JSON.serialize(Database.query(query));
     }
 
+    @AuraEnabled
     public static String updateBoatList(Object data){
         List<Boat__c> boatsForUpdate = (List<Boat__c>) JSON.deserialize(
             JSON.serialize(data),
             List<Boat__c>.class
         );
-        
+
         update boatsForUpdate;
         return 'Success: Boats updated successfully';
     }
