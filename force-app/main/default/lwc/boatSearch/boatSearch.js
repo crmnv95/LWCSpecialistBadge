@@ -19,5 +19,13 @@ export default class BoatSearch extends LightningElement {
         this.handleDoneLoading();
     }
 
-    createNewBoat() { }
+    createNewBoat() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Boat__c',
+                actionName: 'new'
+            }
+        });        
+    }
 }

@@ -47,6 +47,7 @@ export default class BoatSearchResults extends LightningElement {
     @api
     searchBoats(boatTypeId) {
         this.isLoading = true;
+        this.notifyLoading(this.isLoading);
         this.boatTypeId = boatTypeId;
     }
 
