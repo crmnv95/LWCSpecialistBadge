@@ -89,6 +89,7 @@ public with sharing class BoatDataService {
     }
 
     // Assume this may be an API that return this data, not a SOQL query
+    @AuraEnabled(cacheable=true)
     public static String getBoatsByLocation(Decimal latitude, Decimal longitude, String boatTypeId) {
         // Without an explicit boatTypeId, the full list is desired
         String query = 'SELECT Name, Geolocation__Latitude__s, Geolocation__Longitude__s FROM Boat__c ';
